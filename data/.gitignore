@@ -1,0 +1,4 @@
+.env
+__pycache__/
+*.pyc
+data/last_post.txt

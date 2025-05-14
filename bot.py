@@ -1,4 +1,5 @@
 import os
+import discord
 from discord.ext import commands, tasks
 from dotenv import load_dotenv
 from instagram_scraper import InstagramScraper
@@ -9,7 +10,8 @@ TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 CHANNEL_ID = int(os.getenv("CHANNEL_ID"))
 
 # BOT setup
-bot = commands.Bot(command_prefix="!")
+intents = discord.Intents.default()
+bot = commands.Bot(command_prefix="!", intents=intents)
 
 # Create an instance of InstagramScraper
 instagram_scraper = InstagramScraper()
